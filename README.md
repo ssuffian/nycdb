@@ -70,3 +70,18 @@ GNU Affero General Public License for more details.
 ```
 
 The database files provided on this page are licensed [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+
+## Docker Usage
+
+```
+# In one terminal
+docker-compose up db
+
+# In another terminal
+docker-compose run --rm app nycdb {commands}
+```
+
+You can then access the postgres database locally:
+```
+psql -U nycdb nycdb -p 7777 -h localhost
+```
