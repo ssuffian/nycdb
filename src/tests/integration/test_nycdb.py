@@ -482,3 +482,10 @@ def run_cli(args, input):
 def test_dbshell(db):
     outs, errs = run_cli(["--dbshell"], input="\\copyright")
     assert 'PostgreSQL' in outs
+
+
+def test_violations(conn):
+    drop_table(conn, 'violations')
+    violations = nycdb.Dataset('violations', args=ARGS)
+    violations.db_import()
+    assert row_count(conn, 'violations') == 5

@@ -108,6 +108,11 @@ def with_bbl(table, borough='borough', block='block', lot='lot'):
         yield merge(row, {'bbl': bbl(row[borough], row[block], row[lot])})
 
 
+def with_opa_account_number(table, opa_account_number_col):
+    for row in table:
+        yield merge(row, {'opaaccountnumber': row[opa_account_number_col]})
+
+
 def with_geo(table):
     for row in table:
         try:

@@ -1,0 +1,38 @@
+files:
+  -
+    url: https://phl.carto.com/api/v2/sql?q=SELECT+*+FROM+violations&format=csv&skipfields=cartodb_id
+    dest: violations.csv
+schema:
+  table_name: violations
+  fields:
+    opaaccountnumber: text
+    TheGeom: text
+    TheGeomWebmercator: text
+    ObjectId: text
+    AddressObjectId: text
+    ParcelIdNum: text
+    CaseNumber: text
+    CaseCreatedDate: text
+    CaseCompletedDate: text
+    CaseType: text
+    CaseStatus: text
+    CaseResponsibility: text
+    CasePriorityDesc: text
+    ViolationNumber: text
+    Violationdate: text
+    Violationcode: text
+    Violationcodetitle: text
+    Violationstatus: text
+    Violationresolutiondate: text
+    Violationresolutioncode: text
+    Mostrecentinvestigation: text
+    OpaAccountNum: text
+    Address: text
+    UnitType: text
+    UnitNum: text
+    Zip: text
+    CensusTract: text
+    OpaOwner: text
+    SystemOfRecord: text
+    GeocodeX: text
+    GeocodeY: text

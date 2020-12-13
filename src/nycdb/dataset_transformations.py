@@ -2,7 +2,7 @@
 Each function in this file is the name of a table or dataset.
 """
 
-from .transform import with_geo, with_bbl, to_csv, extract_csvs_from_zip, extract_csv_from_zip, skip_fields
+from .transform import with_geo, with_bbl, to_csv, extract_csvs_from_zip, extract_csv_from_zip, skip_fields, with_opa_account_number
 from .transform import hpd_registrations_address_cleanup, hpd_contacts_address_cleanup
 from .dof_parser import parse_dof_file
 from .datasets import datasets
@@ -39,7 +39,6 @@ def {pluto_version}(dataset):
 
 def hpd_complaints(dataset):
     return with_bbl(to_csv(dataset.files[0].dest))
-
 
 def hpd_complaint_problems(dataset):
     return to_csv(dataset.files[1].dest)
@@ -125,3 +124,12 @@ def oca(dataset, schema):
     dest_file = next(filter(lambda f: schema['table_name'] in f.dest, dataset.files))
     _to_csv = to_csv(dest_file.dest)
     return _to_csv
+
+
+def opa_properties(dataset):
+    return with_opa_account_number(to_csv(dataset.files[0].dest), 'parcelnumber')
+
+def violations(dataset):
+    return with_opa_account_number(to_csv(dataset.files[0].dest), 'opaaccountnum')
+
+

@@ -52,6 +52,8 @@ TABLES = {
     'oath_hearings': {'oath_hearings': 10_000_000},
     'hpd_vacateorders': {'hpd_vacateorders': 4_000},
     'j51_exemptions': {'j51_exemptions': 4_000_000},
+    'violations': {'violations': 1_400_000},
+    'opa_properties': {'opa_properties': 580_000},
     'oca': {
         'oca_index': 1_300_000,
         'oca_causes': 1_300_000,
